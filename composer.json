@@ -2,7 +2,6 @@
     "name": "pitekantrop/shittyprofiler",
     "description": "A shitty profiler for Laravel.",
 	"keywords": ["laravel", "profiler"],
-	"version": "1.0.0",
 	"license": "MIT",
     "authors": [
         {
@@ -16,7 +15,7 @@
     },
     "autoload": {
         "psr-0": {
-            "ShittyProfiler": "src/"
+            "Pitekantrop\\ShittyProfiler": "src/"
         }
     },
     "minimum-stability": "stable"
