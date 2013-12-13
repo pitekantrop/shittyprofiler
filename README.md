@@ -9,6 +9,7 @@ Add the following to your `composer.json` file:
 "pitekantrop/shittyprofiler":"*"
 ```
 Then, run `composer update` or `composer install` if you have not already installed packages.
+
 While you're waiting, add the following line to the `providers` array in `app/config/app.php`:
 
 ```php
