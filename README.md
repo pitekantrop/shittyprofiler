@@ -5,7 +5,7 @@ A shitty profiler for Laravel. It only shows some quick and dirty stats, but it'
 Add the following to your `composer.json` file:
 
 ```json
-"juy/profiler" : "dev-master"
+"pitekantrop/shittyprofiler" : "*"
 ```
 
 Then, run `composer update` or `composer install` if you have not already installed packages.
