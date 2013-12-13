@@ -133,11 +133,14 @@ class Profiler {
 
 		foreach ($queries as $i => $query) 
 		{
+			$bindings = $query['bindings'];
 			$db['total'] += $query['time'];
 
 			$db['queries'][] = array(
 				'time'  => $query['time'],
-				'query' => preg_replace('/\?/e', 'array_shift($query["bindings"])', $query['query']),
+				'query' => preg_replace_callback('/\?/', function($matches) use(&$bindings) {
+					return array_shift($bindings);
+				}, $query['query']),
 			);
 		}
 
