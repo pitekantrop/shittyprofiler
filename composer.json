@@ -14,8 +14,8 @@
         "illuminate/support":"4.1.*"
     },
     "autoload": {
-        "psr-0": {
-            "Pitekantrop\\ShittyProfiler": "src/"
+        "psr-4": {
+            "Pitekantrop\\ShittyProfiler\\": "src/"
         }
     },
     "minimum-stability": "stable"
