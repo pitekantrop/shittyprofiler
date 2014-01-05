@@ -36,8 +36,7 @@ class Profiler {
 		$data['files']     = $this->getIncludedFiles();
 		$data['db']        = $this->getQueryStrings();
 		
-		$res->header('Content-Type', 'text/html');
-		$res->setContent($this->app['view']->make('shittyprofiler::prof', $data));
+		$res->header('Content-Type', 'text/html')->setContent($this->app['view']->make('shittyprofiler::prof', $data));
 	}
 
 
@@ -90,7 +89,6 @@ class Profiler {
 
 		return $markers;
 	}
-
 	//--------------------------------------------------------------------
 
 	/**

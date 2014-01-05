@@ -30,8 +30,7 @@ class ProfilerServiceProvider extends ServiceProvider {
 				$prof->displayProfiler($res);
 			});
 
-			
-			$this->package('pitekantrop/shittyprofiler');
+			$this->package('pitekantrop/shittyprofiler', null, __DIR__);
 		}
 	}
 
