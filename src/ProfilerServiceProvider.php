@@ -51,7 +51,9 @@ class ProfilerServiceProvider extends ServiceProvider {
 	 */
 	public function profilerEnabled()
 	{
-		return array_key_exists('profile', $_GET) && $this->app['config']->get('app.debug');
+		return array_key_exists('profile', $_GET) 
+		   and ($this->app['config']->get('app.debug') 
+		   	or  $this->app['config']->get('app.profiler'));
 	}
 
 }
