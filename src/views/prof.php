@@ -41,33 +41,33 @@
 	<div class="wrapper">
 
 		<table>
-			<caption class="large">Time: {{ $timestamp }}ms / Memory: {{$memory}}MB / <a href="{{Request::url().'?profile'}}">Refresh</a></caption>
-			@foreach($markers as $mark)
+			<caption class="large">Time: <?php echo $timestamp; ?>ms / Memory: <?php echo $memory; ?>MB / <a href="<?php echo Request::url().'?profile'; ?>">Refresh</a></caption>
+			<?php foreach($markers as $mark): ?>
 			<tr>
-				<td>{{$mark['name']}}</td>
-				<td align="right">{{$mark['time']}}ms</td>
+				<td><?php echo $mark['name']; ?></td>
+				<td align="right"><?php echo $mark['time']; ?>ms</td>
 			</tr>
-			@endforeach
+			<?php endforeach; ?>
 		</table>
 
 		<table>
-			<caption>DB Queries: {{count($db['queries'])}} / Time: {{$db['total']}}ms</caption>
-			@foreach($db['queries'] as $query)
+			<caption>DB Queries: <?php echo count($db['queries']); ?> / Time: <?php echo $db['total']; ?>ms</caption>
+			<?php foreach($db['queries'] as $query): ?>
 				<tr>
-					<td>{{$query['query']}}</td>
-					<td align="right">{{$query['time']}}ms</td>
+					<td><?php echo $query['query']; ?></td>
+					<td align="right"><?php echo $query['time']; ?>ms</td>
 				</tr>
-			@endforeach
+			<?php endforeach; ?>
 		</table>
 
 		<table>
-			<caption>Included Files: {{count($files)}}</caption>
-			@foreach($files as $i => $file)
+			<caption>Included Files: <?php echo count($files); ?></caption>
+			<?php foreach($files as $i => $file): ?>
 				<tr>
-					<td>{{++$i}}</td>
-					<td>{{$file}}</td>
+					<td><?php echo ++$i; ?></td>
+					<td><?php echo $file; ?></td>
 				</tr>
-			@endforeach
+			<?php endforeach; ?>
 		</table>
 	</div>
 </body>
