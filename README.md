@@ -1,6 +1,6 @@
 # Laravel Shitty Profiler
 
-A shitty profiler for Laravel. It only shows some quick and dirty stats, but it's unobtrusive and easy to setup.
+A shitty profiler for Laravel. It only shows some quick and dirty stats, but it's unobtrusive and easy to configure.
 
 ## Installation
 
@@ -8,7 +8,7 @@ Add the following to your `composer.json` file:
 ```json
 "pitekantrop/shittyprofiler":"*"
 ```
-Then, run `composer update` or `composer install` if you have not already installed packages.
+Then, run `composer update` or `composer install` if you haven't already installed any packages.
 
 While you're waiting, add the following line to the `providers` array in `app/config/app.php`:
 
@@ -19,7 +19,7 @@ And the profiler is installed.
 
 ## Usage
 
-Add the `?profile` query string to the end of the request that you wish to inspect, and the usual output will be replaced with the profiler.
+While your app is in debug mode simply add the `?profile` query string to the URL of the request that you wish to inspect, and the usual output will be replaced with the profiler view.
 
 ![](http://i.imgur.com/NOfkXeT.png)
 
@@ -29,7 +29,7 @@ To measure time from the application start up to a certain point add the followi
 ```php
 Profiler::mark('CustomMarker');
 ```
-To measure time between two markers you can set up them like this:
+It is also possible to measure time between two markers:
 ```php
 Profiler::mark('AnotherCustomMarker');
 // Some code

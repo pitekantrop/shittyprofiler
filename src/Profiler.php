@@ -36,7 +36,9 @@ class Profiler {
 		$data['files']     = $this->getIncludedFiles();
 		$data['db']        = $this->getQueryStrings();
 		
-		$res->header('Content-Type', 'text/html')->setContent($this->app['view']->make('shittyprofiler::prof', $data));
+		$res->header('Content-Type', 'text/html')
+		    ->header('Cache-Control', 'no-cache')
+		    ->setContent($this->app['view']->make('shittyprofiler::prof', $data));
 	}
 
 
